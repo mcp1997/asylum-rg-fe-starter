@@ -42,11 +42,15 @@
 }
 
 .graphs-section {
-    width: 88%;
+    width: 100%;
     margin: 0 auto;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: flex-end;
+}
+
+.graph-container {
+    min-width: 350px;
 }
 
 .graph-container img {
@@ -54,6 +58,7 @@
     margin: 0 auto;
     height: 180px;
     margin-bottom: 6%;
+    max-width: 100%;
 }
 
 .graph-container p {
@@ -64,11 +69,10 @@
 }
 
 .view-more-data-btn-container {
-    height: 44px;
-    width: 180px;
-    margin: 0 auto;
-    text-align: center;
-    margin-bottom: 10%;
+    display: flex;
+    justify-content: space-between;
+    margin: 3% auto 10%;
+    width: 300px;
 }
 
 .middle-section {
@@ -93,16 +97,53 @@
     font-size: 1.4rem;
 }
 
-// .bottom-section {
-//      ADD THIS BACK IN WHEN YOU HAVE A BOTTOM SECTION
-// }
+.bottom-section {
+    font-family: 'acumin';
+}
+
+.bottom-section-title {
+    font-size: 3.5rem;
+    text-align: center;
+    margin: 9% 0;
+}
+
+.data-point-container {
+    display: flex;
+    justify-content: space-around;
+    width: 96%;
+    margin: 0 auto;
+}
+
+.data-point {
+    max-width: 30%;
+    text-align: center;
+}
+
+.data-point h3 {
+    font-size: 3.2rem;
+}
+
+.data-point p {
+    font-size: 1.2rem;
+}
+
+.read-more-btn {
+  text-align: center;
+  margin: 5% 0;
+}
 
 .back-to-top {
     width: 8%;
+    font-family: 'Segoe Ui';
     font-size: 1.2rem;
     cursor: pointer;
     color: black;
     margin: 5% auto;
+}
+
+.back-to-top p {
+  margin: 0 auto;
+  text-align: center;
 }
 
 .ant-space-align-center {
@@ -196,7 +237,7 @@
         color: @white;
     }
 
-    .bottom-section h1 {
+    .bottom-section h2 {
         font-size: 2rem;
     }
 
@@ -308,7 +349,7 @@
         color: @white;
     }
 
-    .bottom-section h1 {
+    .bottom-section h2 {
         font-size: 2.1rem;
     }
 
@@ -421,7 +462,7 @@
         color: @white;
     }
 
-    .bottom-section h1 {
+    .bottom-section h2 {
         font-size: 2.1rem;
     }
 
@@ -536,7 +577,7 @@
         color: @white;
     }
 
-    .bottom-section h1 {
+    .bottom-section h2 {
         font-size: 2.7rem;
     }
 
@@ -678,7 +719,7 @@
         color: @white;
     }
 
-    .bottom-section h1 {
+    .bottom-section h2 {
         font-size: 3.5rem;
     }
 
