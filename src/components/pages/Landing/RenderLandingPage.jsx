@@ -125,7 +125,6 @@ function RenderLandingPage(props) {
                 color: '#FFFFFF',
                 fontFamily: 'Segoe Ui',
               }}
-              onClick={() => history.push('/graphs')}
             >
               Read More
             </Button>
