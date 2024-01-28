@@ -6,10 +6,12 @@ import {
   // useHistory,
   Switch,
 } from 'react-router-dom';
+import ProtectedRoute from './utils/protected-route';
 
 import 'antd/dist/antd.less';
 import { NotFoundPage } from './components/pages/NotFound';
 import { LandingPage } from './components/pages/Landing';
+import { UserInfo } from './components/pages/ProfilePage';
 
 import { FooterContent, SubFooter } from './components/Layout/Footer';
 import { HeaderContent } from './components/Layout/Header';
@@ -23,15 +25,19 @@ import { configureStore } from '@reduxjs/toolkit';
 import reducer from './state/reducers';
 import { colors } from './styles/data_vis_colors';
 
+import Auth0ProviderWithHistory from './utils/auth0-provider-with-history';
+
 const { primary_accent_color } = colors;
 
 const store = configureStore({ reducer: reducer });
 ReactDOM.render(
   <Router>
     <Provider store={store}>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
+      <Auth0ProviderWithHistory>
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      </Auth0ProviderWithHistory>
     </Provider>
   </Router>,
   document.getElementById('root')
@@ -54,6 +60,7 @@ export function App() {
       <Switch>
         <Route path="/" exact component={LandingPage} />
         <Route path="/graphs" component={GraphsContainer} />
+        <ProtectedRoute path="/profile" component={UserInfo} />
         <Route component={NotFoundPage} />
       </Switch>
       <Footer
